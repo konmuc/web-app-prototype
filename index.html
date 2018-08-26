@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KonGeoS Web App Prototype</title>
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <script src="./api.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>KonGeoS Web App Prototype</h1>
+
+        <section class="login">
+            <input id="radSignIn" type="radio" name="view" value="sign-in" /><label for="radSignIn" class="view-switch">sign-in</label>
+            <input id="radSignUp" type="radio" name="view" value="sign-up" /><label for="radSignUp" class="view-switch">sign-up</label>
+        </section>
+    </header>
+
+    <section class="info-field">
+
+    </section>
+
+    <main>
+        <section class="view" name="feed" hidden>
+            <section class="feed">Here comes the feed</section>
+            <section class="post-new">Here comes a new post</section>
+        </section>
+
+        <section class="view" name="users" hidden>
+            <section id="secUsers"></section>
+            <button id="btnUsersUpdate">Load users</button>
+        </section>
+
+        <section class="view" name="profile" hidden>
+            <form class="user-profile-form">
+                <label for="inGender">Gender:</label><input id="inGender" type="text">
+                <label for="inMotto">Motto:</label><input id="inMotto" type="text">
+                <label for="inUniversity">University:</label><input id="inUniversity" type="text">
+                <input type="submit" value="Update profile">
+            </form>
+        </section>
+
+        <section class="view" name="sign-up" hidden>
+            <h2>Sign up</h2>
+            <form class="sign-up-form">
+                <label for="inUsername-sign-up">Username:</label><input id="inUsername-sign-up" type="text">
+                <label for="inFirstname">Firstname:</label><input type="text" name="" id="inFirstname">
+                <label for="inLastname">Lastname:</label><input type="text" name="" id="inLastname">
+                <label for="inPassword-sign-up">Password:</label><input type="password" name="" id="inPassword-sign-up">
+                <input type="submit" value="Sign up">
+            </form>
+        </section>
+
+        <section class="view" name="sign-in" hidden open>
+            <h2>Sign in</h2>
+            <form class="sign-in-form">
+                <label for="inUsername-sign-in">Username:</label>
+                <input type="text" name="" id="inUsername-sign-in">
+                <label for="inPassword-sign-in">Password:</label>
+                <input type="password" name="" id="inPassword-sign-in">
+                <input type="submit" value="Sign in">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <input id="radFeed" type="radio" name="view" value="Feed" /><label for="radFeed" class="view-switch">Feed</label>
+        <input id="radUsers" type="radio" name="view" value="Users" /><label for="radUsers" class="view-switch">Users</label>
+        <input id="radProfile" type="radio" name="view" value="Profile" /><label for="radProfile" class="view-switch">Profile</label>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./index.js"></script>
+</body>
+
+</html>

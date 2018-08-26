@@ -1,0 +1,132 @@
+:root {
+    --primary-color: #021f42;
+    --secondary-color: #e40000;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary-color);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+body > header {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 3fr auto;
+}
+
+body > main {
+    flex: 1;
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 20px;
+}
+
+body > footer {
+    display: grid;
+    grid-auto-flow: column;
+    border-collapse: collapse;
+}
+
+.view-switch {
+    font-size: 1.5em;
+    height: 3em;
+    line-height: 3em;
+    border: 1px solid var(--primary-color, black);
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+body > footer > input {
+    display: none;
+}
+
+input[type="radio"]:checked+label.view-switch { 
+    font-weight: bold; 
+}
+
+h1 {
+    text-align: center;
+}
+
+details {
+    padding: 10px;
+}
+
+form {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+form > input[type=submit] {
+}
+
+button, input[type=button], input[type=submit] {
+    justify-self: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+code + pre {
+    background: lightgray;
+    padding: 10px;
+}
+
+/* Login */
+section.login > input {
+    display: none;
+}
+
+/* Info field */
+.info-field {
+    padding: 10px;
+    margin: 10px;
+}
+
+.info-field.error {
+    background-color: var(--color-error-background, red);
+    color: var(--color-error, darkred);
+}
+
+.info-field.warning {
+    background-color: var(--color-warning-background, yellow);
+    color: var(--color-warning, orange);
+}
+
+.info-field.success {
+    background-color: var(--color-success-background, lightgreen);
+    color: var(--color-success, green);
+}
+
+.info-field.info {
+    background-color: var(--color-info-background, lightgray);
+    color: var(--color-info, darkgray);
+}
+
+/* Views */
+.view[name=feed]:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.view[name=feed] > .feed {
+    flex: 1;
+}
