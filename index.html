@@ -7,7 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KonGeoS Web App Prototype</title>
     <link rel="stylesheet" href="./index.css">
+    <script src="./core.js"></script>
+    <script src="./module.js"></script>
     <script src="./api.js"></script>
+    <script src="./apiModule.js"></script>
+    <script src="./authenticationModule.js"></script>
+    <script src="./signFormModule.js"></script>
+    <script src="./guiLoggingModule.js"></script>
+    <script src="./feedModule.js"></script>
+    <script src="./postModule.js"></script>
 </head>
 
 <body>
@@ -17,6 +25,7 @@
         <section class="login">
             <input id="radSignIn" type="radio" name="view" value="sign-in" /><label for="radSignIn" class="view-switch">sign-in</label>
             <input id="radSignUp" type="radio" name="view" value="sign-up" /><label for="radSignUp" class="view-switch">sign-up</label>
+            <input id="radSignOut" type="radio" name="view" value="sign-out" hidden/><label for="radSignOut" class="view-switch" hidden>sign-out</label>
         </section>
     </header>
 
@@ -26,8 +35,14 @@
 
     <main>
         <section class="view" name="feed" hidden>
-            <section class="feed">Here comes the feed</section>
-            <section class="post-new">Here comes a new post</section>
+            <section class="feed"></section>
+            <section class="post-new">
+                <textarea name="newPost" id="inPost"></textarea>
+                <!-- <button id="btnGeolocation">📍</button> -->
+                <!-- <input type="file" accept="image/*" id="inCapture" capture="camera" hidden>
+                <label for="inCapture" class="btn">📷</label> -->
+                <button id="btnPost">✈️</button>
+            </section>
         </section>
 
         <section class="view" name="users" hidden>

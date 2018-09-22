@@ -1,0 +1,56 @@
+Web app prototype:
+    
+    Design:
+        Colors:
+            Logo:
+                red: #e40000
+                dark-blue: #021f42
+            KonGeoS:
+                orange: #f38f14
+                blue: #033794
+                gray: #999999
+            Fachschaft:
+                turquoise: #009793
+
+        Inspirations:
+            ☐ Jodel
+            ☐ yik yak
+            ☐ Google Chrome
+
+    Features:
+        AuthModule:
+            ✔ signIn @done (9/22/2018, 5:07:48 PM)
+            ☐ signUp
+            ✔ signOut @done (9/22/2018, 7:29:38 PM)
+
+        Logging module:
+            ✔ clear and hide after some time @done (9/22/2018, 7:30:26 PM)
+            ✔ add logging and warning @done (9/22/2018, 7:30:28 PM)
+        
+        Feed module:
+            ✔ add overflow scroll to @done (9/21/2018, 10:09:57 PM)
+            ☐ Up-/downvote
+            ☐ Comments
+
+        Post module:
+            ✔ Simple post with text @started(18-09-22 19:30) @done (9/22/2018, 7:53:19 PM)
+            ☐ Enable images
+            ☐ Enable geolocation
+
+        Routing module:
+
+
+        Profile module:
+            ☐ Set profile
+            ☐ Load profile
+
+        Users module:
+            ☐ display user info
+
+    Stuff to think about:
+        ☐ set the date of a post/comment on the server
+        ☐ why do I only get an new accesstoken and not also an new refreshtoken, if fresh the token
+        ☐ remove html script tags from a post/comment to prevent Cross side scripting
+        ✔ api endpoint to https @started(18-09-21 22:12) @done (9/22/2018, 7:30:04 PM)
+        ☐ store images in separat directory
+        ☐ add pinned attribute to post
