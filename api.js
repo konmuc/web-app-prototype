@@ -1,9 +1,7 @@
 class API {
     constructor() {
-        this.ip = 'app.jaka.xyz'
-        this.port = 443
         this.version = 'v1'
-        this.baseUrl = `https://${this.ip}:${this.port}/`
+        this.baseUrl = `https://app.kongeos-muenchen.de/`
         this.apiUrl = `${this.baseUrl}${this.version}/`
         this.loggedIn = false
 
