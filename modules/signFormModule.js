@@ -19,8 +19,6 @@ class SignFormModule extends Module {
     
         this.publish('sign-up', { username, firstname, lastname, password })
     }
-
-    // Aleks: Copy paste ist der FEIND
     
     onSignInSubmit(event) {
         event.preventDefault()
