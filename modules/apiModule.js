@@ -49,7 +49,7 @@ class ApiModule extends Module {
     getFeed() {
         this.api.getPosts()
             .then(posts => {
-                this.publish('feed', posts)
+                this.publish('feed', { username: this.api.username, posts })
             })
     }
 

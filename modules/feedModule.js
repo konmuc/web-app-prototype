@@ -1,5 +1,5 @@
 class FeedModule extends Module {
-    constructor (sandbox, options) {
+    constructor(sandbox, options) {
         super(sandbox)
 
         this.$ = {
@@ -12,7 +12,7 @@ class FeedModule extends Module {
         this.subscribe('feed', this.onFeedUpdate)
     }
 
-    onFeedUpdate(posts) {
+    onFeedUpdate({ username, posts }) {
         Object.keys(posts)
             .sort((postIdA, postIdB) => {
                 let postA = posts[postIdA]
@@ -28,11 +28,11 @@ class FeedModule extends Module {
             })
             .forEach(postId => {
                 let post = posts[postId]
-                this.renderPost(post)
+                this.renderPost({ username, post })
             })
     }
 
-    renderPost (post) {
+    renderPost({ username, post }) {
         let article        = document.createElement('article')
         let header         = document.createElement('header')
         let asideLeft      = document.createElement('aside')
@@ -53,14 +53,14 @@ class FeedModule extends Module {
         let geolocation    = document.createElement('a')
 
         article.id = post._id
-        
+
         article.appendChild(header)
 
         asideLeft.className = 'left'
         article.appendChild(asideLeft)
-        
+
         article.appendChild(main)
-        
+
         asideRight.className = 'right'
         article.appendChild(asideRight)
 
@@ -74,30 +74,38 @@ class FeedModule extends Module {
 
         votesContainer.className = 'votes'
         asideRight.appendChild(votesContainer)
-        
-        btnUpVotes.innerText = '^'
+
+        if (post.votes.upvotes.indexOf(username) != -1) {
+            btnUpVotes.innerText = '▲'
+        } else {
+            btnUpVotes.innerText = '△'
+        }
         votesContainer.appendChild(btnUpVotes)
-        
+
         upVotes.innerText = post.votes.upvotes.length
         upVotes.className = 'votes-value'
-        upVotes.hidden = true
+        upVotes.hidden    = true
         votesContainer.appendChild(upVotes)
-        
+
         votes.innerText = post.votes.downvotes.length + post.votes.upvotes.length
         votesContainer.appendChild(votes)
-        
+
         downVotes.innerText = post.votes.downvotes.length
         downVotes.className = 'votes-value'
-        downVotes.hidden = true
+        downVotes.hidden    = true
         votesContainer.appendChild(downVotes)
-        
-        btnDownVotes.innerText = 'v'
+
+        if (post.votes.downvotes.indexOf(username) != -1) {
+            btnDownVotes.innerText = '▼'
+        } else {
+            btnDownVotes.innerText = '▽'
+        }
         votesContainer.appendChild(btnDownVotes)
-        
+
         content.innerText = post.content.text
         content.className = 'content'
         main.appendChild(content)
-        
+
         // Time ago
         time.innerText = this._formatTimeAgo(post.content.metadata.date)
         time.className = 'time'
@@ -123,11 +131,11 @@ class FeedModule extends Module {
 
         const second = 1000
         const minute = second * 60
-        const hour   = minute * 60
-        const day    = hour * 24
+        const hour = minute * 60
+        const day = hour * 24
 
-        let days    = Math.floor(dateDiff / day)
-        let hours   = Math.floor((dateDiff - days * day) / hour)
+        let days = Math.floor(dateDiff / day)
+        let hours = Math.floor((dateDiff - days * day) / hour)
         let minutes = Math.floor((dateDiff - days * day - hours * hour) / minute)
         let seconds = Math.floor((dateDiff - days * day - hours * hour - minutes * minute) / second)
 
