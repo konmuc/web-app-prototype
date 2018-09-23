@@ -1,7 +1,7 @@
 class API {
     constructor() {
         this.version = 'v1'
-        this.baseUrl = `https://app.kongeos-muenchen.de/`
+        this.baseUrl = `https://api.kongeos-muenchen.de/`
         this.apiUrl = `${this.baseUrl}${this.version}/`
         this.loggedIn = false
 
