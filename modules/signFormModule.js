@@ -12,10 +12,10 @@ class SignFormModule extends Module {
 
     onSignUpSubmit(event) {
         event.preventDefault()
-        let username  = this.$.signInForm.querySelector('input#inUsername-sign-up').value
-        let firstname = this.$.signInForm.querySelector('input#inFirstname').value
-        let lastname  = this.$.signInForm.querySelector('input#inLastname').value
-        let password  = this.$.signInForm.querySelector('input#inPassword-sign-up').value
+        let username  = this.$.signUpForm.querySelector('input#inUsername-sign-up').value
+        let firstname = this.$.signUpForm.querySelector('input#inFirstname').value
+        let lastname  = this.$.signUpForm.querySelector('input#inLastname').value
+        let password  = this.$.signUpForm.querySelector('input#inPassword-sign-up').value
     
         this.publish('sign-up', { username, firstname, lastname, password })
     }
