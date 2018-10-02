@@ -95,7 +95,7 @@ class FeedModule extends Module {
         upVotes.hidden    = true
         votesContainer.appendChild(upVotes)
 
-        votes.innerText = post.votes.downvotes.length + post.votes.upvotes.length
+        votes.innerText = post.votes.upvotes.length - post.votes.downvotes.length
         votesContainer.appendChild(votes)
 
         downVotes.innerText = post.votes.downvotes.length
