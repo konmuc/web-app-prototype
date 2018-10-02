@@ -210,6 +210,34 @@ class API {
             })
     }
 
+    upvote(postId) {
+        const urlPath = `posts/${postId}/upvote`
+        const url = this.apiUrl + urlPath
+
+        return fetch(`${url}?token=${this.accessToken}`, {
+            method: 'GET'
+        })
+            .then(res => res.json())
+            .catch(error => {
+                console.error('Upvote::ERROR:', error)
+                this.onInfoMessage({ type: 'error', message: '<b>Upvote::ERROR:</b> ' + error.toString() })
+            })
+    }
+
+    downvote(postId) {
+        const urlPath = `posts/${postId}/downvote`
+        const url = this.apiUrl + urlPath
+
+        return fetch(`${url}?token=${this.accessToken}`, {
+            method: 'GET'
+        })
+            .then(res => res.json())
+            .catch(error => {
+                console.error('Downvote::ERROR:', error)
+                this.onInfoMessage({ type: 'error', message: '<b>Downvote::ERROR:</b> ' + error.toString() })
+            })
+    }
+
     _publishLoginChange() {
         if (typeof (this.onLoginStateChange) === 'function') {
             this.onLoginStateChange({
