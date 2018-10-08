@@ -82,12 +82,20 @@ class FeedModule extends Module {
         }
         votesContainer.appendChild(btnUpVotes)
 
+        btnUpVotes.addEventListener('click', event => {
+            this.publish('post-upvote', post._id)
+        })
+
+        btnDownVotes.addEventListener('click', event => {
+            this.publish('post-downvote', post._id)
+        })
+
         upVotes.innerText = post.votes.upvotes.length
         upVotes.className = 'votes-value'
         upVotes.hidden    = true
         votesContainer.appendChild(upVotes)
 
-        votes.innerText = post.votes.downvotes.length + post.votes.upvotes.length
+        votes.innerText = post.votes.upvotes.length - post.votes.downvotes.length
         votesContainer.appendChild(votes)
 
         downVotes.innerText = post.votes.downvotes.length

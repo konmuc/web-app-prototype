@@ -12,6 +12,9 @@ class ApiModule extends Module {
 
         this.subscribe('get-feed', this.getFeed)
         this.subscribe('post',     this.sendPost)
+
+        this.subscribe('post-upvote', this.upvote)
+        this.subscribe('post-downvote', this.downvote)
     }
 
     _onLoginStateChange({ loginState, username }) {
@@ -66,5 +69,13 @@ class ApiModule extends Module {
             }
         }
         this.api.post(content)
+    }
+
+    upvote(postId) {
+        this.api.upvote(postId)
+    }
+    
+    downvote(postId) {
+        this.api.downvote(postId)
     }
 }
