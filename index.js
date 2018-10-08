@@ -1,6 +1,7 @@
 let core = new Core()
 
 core.register('logging-gui', GuiLoggingModule)
+core.register('router',      RouteModule)
 core.register('api',         ApiModule)
 core.register('sign',        SignFormModule)
 core.register('auth',        AuthenticationModule)
@@ -23,8 +24,12 @@ function init() {
             }
         })
 
+        core.subscribe('location-change', locationHash => {
+            switchView(locationHash)
+        })
+
     // Post init
-    switchView('feed')
+    location.hash = '#/feed'
 }
 init()
 
