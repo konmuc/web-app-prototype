@@ -1,0 +1,13 @@
+{
+    "name": "KonGeoS München",
+    "short_name": "KonGeoS München",
+    "start_url": "app.kongeos-muenchen.de",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Eine einfach lesbare Hacker News App.",
+    "related_applications": [
+        {
+            "platform": "Web"
+        }
+    ]
+}
