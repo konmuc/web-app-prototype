@@ -53,6 +53,7 @@ class FeedModule extends Module {
         let geolocation    = document.createElement('a')
 
         article.id = post._id
+        article.className = 'post'
 
         article.appendChild(header)
 
@@ -122,7 +123,11 @@ class FeedModule extends Module {
         // Comments
         comments.innerText = `${post.comments.length}`
         comments.className = 'comments'
+        comments.href      = `./#/post/${post._id}`
         footer.appendChild(comments)
+        comments.addEventListener('click', event => {
+            this.publish('post-open', { username, post })
+        })
 
         // Geolocation
         geolocation.innerText = `${post.content.metadata.geolocation.lat} ${post.content.metadata.geolocation.lon}`

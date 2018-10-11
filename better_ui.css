@@ -1,0 +1,109 @@
+form {
+    display: grid;
+    grid-gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+input,
+select,
+button {
+    border: none;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    height: 1.2rem;
+    border-radius: 0.6rem;
+    padding: 0.05rem 0.1rem;
+    margin: 0;
+    background-color: #eee;
+}
+
+input[type=text],
+input[type=number],
+input[type=search] {
+    border: none;
+}
+
+input:focus,
+select:focus {
+    background-color: #fff;
+    box-shadow: 0 0 2px 1px #a6c8ff;
+    outline: none;
+}
+
+input[type=button],
+input[type=submit],
+button {
+    border: 1px solid #1d7fff;
+    color: #1d7fff;
+    background-color: #fff;
+    font-weight: bold;
+    padding: 0.15rem 0.3rem;
+    cursor: pointer;
+    grid-column: span 2;
+    justify-self: center;
+    align-self: center;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+button:hover {
+    color: #fff;
+    background-color: #1d7fff;
+}
+
+input:invalid,
+input:invalid:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px rgba(255, 0, 0, 0.9);
+}
+
+fieldset {
+    border-radius: 0.5rem;
+    grid-column: span 2;
+    padding: 0.5rem;
+
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    grid-gap: 0.5rem;
+}
+
+fieldset > legend {
+    grid-column: span 2;
+}
+
+fieldset > input {
+    grid-column: span 2;
+}
+
+fieldset > input[type=button][value=Add],
+input[type=submit] {
+    margin-top: 0.5rem;
+}
+
+.post-new {
+    margin: 0.5rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, auto);
+    grid-gap: 0.5rem;
+}
+
+body {
+    /* background-color: #1d7fff; */
+}
+
+header {
+}
+
+header > h1 {
+    font-size: 20px;
+}
+
+footer {
+}
+
+.view-switch {
+    height: 2rem;
+    padding: 0;
+    line-height: 1.5rem;
+}

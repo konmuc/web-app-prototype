@@ -11,10 +11,11 @@ class ApiModule extends Module {
         this.subscribe('sign-out', this.signOut)
 
         this.subscribe('get-feed', this.getFeed)
-        this.subscribe('post',     this.sendPost)
+        this.subscribe('post',     this.sendPostComment)
 
-        this.subscribe('post-upvote', this.upvote)
+        this.subscribe('post-upvote',   this.upvote)
         this.subscribe('post-downvote', this.downvote)
+        this.subscribe('post-comment',  this.sendPostComment)
     }
 
     _onLoginStateChange({ loginState, username }) {
@@ -56,7 +57,8 @@ class ApiModule extends Module {
             })
     }
 
-    sendPost(data) {
+    sendPostComment(data) {
+        const type = data.type ? data.type : 'post';
         let content = {
             text: data.text,
             metadata: {
@@ -68,7 +70,12 @@ class ApiModule extends Module {
                 }
             }
         }
-        this.api.post(content)
+
+        if (type === 'post') {
+            this.api.post(content)
+        } else if (type === 'comment' && data.postId) {
+            this.api.comment(data.postId, content)
+        }
     }
 
     upvote(postId) {

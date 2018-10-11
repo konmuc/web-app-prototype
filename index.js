@@ -7,6 +7,7 @@ core.register('sign',        SignFormModule)
 core.register('auth',        AuthenticationModule)
 core.register('feed',        FeedModule)
 core.register('post',        PostModule)
+core.register('post-feed',   PostFeedModule)
 
 core.startModules()
 window.core = core
@@ -25,7 +26,8 @@ function init() {
         })
 
         core.subscribe('location-change', locationHash => {
-            switchView(locationHash)
+            let baseLocation = locationHash.split('/')[0]
+            switchView(baseLocation)
         })
 
     // Post init

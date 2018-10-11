@@ -76,14 +76,17 @@ form {
 form > input[type=submit] {
 }
 
-button, input[type=button], input[type=submit], .btn {
+/* button, 
+input[type=button], 
+input[type=submit], 
+.btn {
     justify-self: center;
     text-transform: uppercase;
     font-size: 1.5em;
     background: none;
     border: none;
     cursor: pointer;
-}
+} */
 
 code + pre {
     background: lightgray;
@@ -158,7 +161,7 @@ section.login > input {
     overflow-y: auto;
 }
 
-article {
+.post {
     padding: 10px;
     margin: 10px;
     display: grid;
@@ -175,24 +178,24 @@ article {
     grid-template-rows: auto 1fr auto;
 }
 
-article > header {
+.post > header {
     grid-area: header;
 }
 
-article > aside.right {
+.post > aside.right {
     grid-area: aside-right;
     align-self: center;
 }
 
-article > main {
+.post > main {
     grid-area: main;
 }
 
-article > aside.left {
+.post > aside.left {
     grid-area: aside-left;
 }
 
-article > footer {
+.post > footer {
     grid-area: footer;
     text-align: center;
     display: grid;
@@ -253,4 +256,17 @@ article > footer {
     flex: 1;
     border-radius: 0.25rem;
     border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.comment {
+    display: block;
+    border: 1px solid gray;
+    margin: 5px;
+    padding: 5px;
+}
+
+.comment > .userName {
+}
+.comment > .content {
+    margin-left: 10px;
 }

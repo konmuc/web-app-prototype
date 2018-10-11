@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KonGeoS Web App Prototype</title>
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./better_ui.css">
     <script src="./core/core.js"></script>
     <script src="./core/module.js"></script>
     <script src="./core/api.js"></script>
@@ -17,6 +18,7 @@
     <script src="./modules/signFormModule.js"></script>
     <script src="./modules/feedModule.js"></script>
     <script src="./modules/postModule.js"></script>
+    <script src="./modules/postFeedModule.js"></script>
 </head>
 
 <body>
@@ -26,7 +28,8 @@
         <section class="login">
             <input id="radSignIn" type="radio" name="view" value="sign-in" /><label for="radSignIn" class="view-switch">sign-in</label>
             <input id="radSignUp" type="radio" name="view" value="sign-up" /><label for="radSignUp" class="view-switch">sign-up</label>
-            <input id="radSignOut" type="radio" name="view" value="sign-out" hidden/><label for="radSignOut" class="view-switch" hidden>sign-out</label>
+            <input id="radSignOut" type="radio" name="view" value="sign-out" hidden /><label for="radSignOut" class="view-switch"
+                hidden>sign-out</label>
         </section>
     </header>
 
@@ -44,6 +47,28 @@
                 <label for="inCapture" class="btn">📷</label> -->
                 <button id="btnPost">✈️</button>
             </section>
+        </section>
+
+        <section class="view" name="post" hidden>
+            <header class="post" id="5bb3b642b59e1a7eba231482">
+                <header><a href="#Hannsi" class="user-info">Hannsi</a></header>
+                <aside class="left"></aside>
+                <main>
+                    <p class="content">Einst lebte ein Mann in Peru, dem träumte er aß seinen Schuh. Er wachte auf
+                        vor schreck und der Schuh der war weg und der Schnürsenkel gleich mit dazu!!!elf<br><br></p>
+                </main>
+                <aside class="right">
+                    <div class="votes"><button>△</button><span class="votes-value" hidden="">0</span><span>0</span><span
+                            class="votes-value" hidden="">0</span><button>▽</button></div>
+                </aside>
+                <footer><span class="time">5d 18h 52m 31s</span><a class="comments">0</a><a class="geolocation">null
+                        null</a></footer>
+            </header>
+            <main></main>
+            <footer>
+                <textarea id="inComment"></textarea>
+                <button id="btnSendComment">Send comment</button>
+            </footer>
         </section>
 
         <section class="view" name="users" hidden>

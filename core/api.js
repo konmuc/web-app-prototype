@@ -81,18 +81,18 @@ class API {
                 clientId: this.clientId
             })
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.status == 200 || data.status == 401) {
-                this.loggedIn = false
-                this._publishLoginChange()
-                this._clearUserInfo()
-            }
-        })
-        .catch(error => {
-            console.error('SignOut::ERROR:', error)
-            this.onInfoMessage({ type: 'error', message: '<b>SignOut::ERROR:</b> ' + error.toString() })
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status == 200 || data.status == 401) {
+                    this.loggedIn = false
+                    this._publishLoginChange()
+                    this._clearUserInfo()
+                }
+            })
+            .catch(error => {
+                console.error('SignOut::ERROR:', error)
+                this.onInfoMessage({ type: 'error', message: '<b>SignOut::ERROR:</b> ' + error.toString() })
+            })
     }
 
     updateToken() {
@@ -185,7 +185,6 @@ class API {
                 "Content-Type": "application/json; charset=utf-8"
             },
             body: JSON.stringify({
-                username: this.username,
                 content
             })
         })
@@ -238,6 +237,26 @@ class API {
             })
     }
 
+    comment(postId, content) {
+        const urlPath = `posts/${postId}`
+        const url = this.apiUrl + urlPath
+
+        return fetch(`${url}?token=${this.accessToken}`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            body: JSON.stringify({
+                content
+            })
+        })
+            .then(res => res.json())
+            .catch(error => {
+                console.error('Comment::ERROR:', error)
+                this.onInfoMessage({ type: 'error', message: '<b>Comment::ERROR:</b> ' + error.toString() })
+            })
+    }
+
     _publishLoginChange() {
         if (typeof (this.onLoginStateChange) === 'function') {
             this.onLoginStateChange({
@@ -248,7 +267,7 @@ class API {
     }
 
     _saveUserInfo() {
-        localStorage['userInfo'] = JSON.stringify({
+        localStorage[ 'userInfo' ] = JSON.stringify({
             username: this.username,
             refreshToken: this.refreshToken,
             accessToken: this.accessToken,
@@ -263,7 +282,7 @@ class API {
             if (userInfoRaw) {
                 let userInfo = JSON.parse(userInfoRaw)
                 Object.keys(userInfo)
-                    .forEach(key => this[key] = userInfo[key])
+                    .forEach(key => this[ key ] = userInfo[ key ])
             }
         } catch (loadUserInfoError) {
             console.error('API::loadUserInfo', loadUserInfoError)
