@@ -2,14 +2,15 @@
     "name": "KonGeoS München",
     "short_name": "KonGeoS München",
     "start_url": "./?homescreen=1",
-    "display": "standalone",
+    "display": "minimal-ui",
     "background_color": "#fff",
+    "orientation": "portrait-primary",
     "description": "Web Application für die KonGeoS in München.",
     "icons": [
         {
-            "src": "https://kongeos-muenchen.de/images/Logo_KonGeos_4.svg",
+            "src": "./images/icons/kongeosMunich_icon_192x192.png",
             "sizes": "192x192",
-            "type": "image/svg"
+            "type": "image/png"
         }
     ]
 }
