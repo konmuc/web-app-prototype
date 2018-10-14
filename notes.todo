@@ -37,9 +37,12 @@ Web app prototype:
     Features:
         AuthModule:
             ✔ signIn @done (9/22/2018, 5:07:48 PM)
+                ✔ redirect to feed on success @done (10/14/2018, 11:56:29 PM)
             ✔ signUp @done (10/8/2018, 10:33:25 AM)
                 ☐ password confirmation
+                ☐ redirect to sign-in on success
             ✔ signOut @done (9/22/2018, 7:29:38 PM)
+                ✔ redirect to sign-in @done (10/14/2018, 11:59:10 PM)
 
         Logging module:
             ✔ clear and hide after some time @done (9/22/2018, 7:30:26 PM)
@@ -63,6 +66,7 @@ Web app prototype:
         Profile module:
             ☐ Set profile
             ☐ Load profile
+                ☐ Load user profile on successful sign-in
 
         Users module:
             ☐ display user info

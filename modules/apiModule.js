@@ -33,6 +33,9 @@ class ApiModule extends Module {
 
     signUp({ username, firstname, lastname, password }) {
         this.api.signUp({ username, firstname, lastname, password })
+            .then(_ => {
+                this.publish('signed-up', username)
+            })
     }
 
     signIn({ username, password }) {
