@@ -31,7 +31,7 @@ function init() {
         })
 
     // Post init
-    location.hash = '#/feed'
+    location.hash = '#/sign-in'
 }
 init()
 
