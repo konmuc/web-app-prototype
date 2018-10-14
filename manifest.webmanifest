@@ -2,7 +2,7 @@
     "name": "KonGeoS München",
     "short_name": "KonGeoS München",
     "start_url": "./?homescreen=1",
-    "display": "minimal-ui",
+    "display": "standalone",
     "background_color": "#fff",
     "orientation": "portrait-primary",
     "description": "Web Application für die KonGeoS in München.",
