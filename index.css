@@ -149,6 +149,11 @@ section.login > input {
     content: 'ℹ️';
 }
 
+/* Back button */
+#btnBack {
+    padding: 0.5rem;
+}
+
 /* Views */
 .view[name=feed]:not([hidden]) {
     display: flex;
@@ -254,8 +259,6 @@ section.login > input {
 
 .post-new > textarea {
     flex: 1;
-    border-radius: 0.25rem;
-    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .comment {
@@ -287,8 +290,11 @@ section.login > input {
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    padding: 0.5rem;
 }
 
 .view[name=post] > footer > #inComment {
     flex: 1;
+    height: 2rem;
+    max-height: 4rem;
 }

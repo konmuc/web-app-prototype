@@ -1,5 +1,6 @@
 let core = new Core()
 
+core.register('back-button', BackButtonModule)
 core.register('logging-gui', GuiLoggingModule)
 core.register('router',      RouteModule)
 core.register('api',         ApiModule)
