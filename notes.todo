@@ -38,6 +38,7 @@ Web app prototype:
         AuthModule:
             ✔ signIn @done (9/22/2018, 5:07:48 PM)
             ✔ signUp @done (10/8/2018, 10:33:25 AM)
+                ☐ password confirmation
             ✔ signOut @done (9/22/2018, 7:29:38 PM)
 
         Logging module:

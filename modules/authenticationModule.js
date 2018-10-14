@@ -3,12 +3,9 @@ class AuthenticationModule extends Module {
         super(sandbox)
         this.$ = {
             login: document.querySelector('section.login'),
-            signIn: document.querySelector('section.login').querySelector('#radSignIn'),
-            signInLabel: document.querySelector('section.login').querySelector('label[for=radSignIn]'),
-            signUp: document.querySelector('section.login').querySelector('#radSignUp'),
-            signUpLabel: document.querySelector('section.login').querySelector('label[for=radSignUp]'),
-            signOut: document.querySelector('section.login').querySelector('#radSignOut'),
-            signOutLabel: document.querySelector('section.login').querySelector('label[for=radSignOut]'),
+            signIn: document.querySelector('section.login').querySelector('#aSignIn'),
+            signUp: document.querySelector('section.login').querySelector('#aSignUp'),
+            signOut: document.querySelector('section.login').querySelector('#aSignOut'),
         }
 
         this.$.signOut.addEventListener('click', event => {
@@ -29,15 +26,12 @@ class AuthenticationModule extends Module {
 
     setVisibility(buttonName, isVisible) {
         let button = this.$[buttonName]
-        let buttonLabel = this.$[`${buttonName}Label`]
 
-        if (button && buttonLabel) {
+        if (button) {
             if (!isVisible) {
                 button.setAttribute('hidden', isVisible)
-                buttonLabel.setAttribute('hidden', isVisible)
             } else {
                 button.removeAttribute('hidden')
-                buttonLabel.removeAttribute('hidden')
             }
         } else {
             console.error('AuthenticationModule::setVisibility:', `The input or label with the name '${buttonName}' does not exist.`)
