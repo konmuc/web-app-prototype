@@ -267,6 +267,28 @@ section.login > input {
 
 .comment > .userName {
 }
+
 .comment > .content {
     margin-left: 10px;
+}
+
+.view[name=post]:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.view[name=post] > main {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.view[name=post] > footer {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.view[name=post] > footer > #inComment {
+    flex: 1;
 }
